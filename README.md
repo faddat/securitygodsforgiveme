@@ -3,7 +3,7 @@ Bits and pieces so that you can get passwordless root logins onto GCE servers.
 
 #how-to:
 okay folks, this one is nothing fancy.  Just do like such
-1  fork this repo
+ 1  fork this repo
 3  'git clone https://github.com/faddat/securitygodsforgiveme'
 3  'cat ~/.ssh/id_rsa.pub'
 4  copy your ssh key into the clipboard (there's a comand just for this and it's handy but it's late and I cannot remember the name)
