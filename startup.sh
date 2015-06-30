@@ -1,6 +1,8 @@
 #! /bin/bash
 rm /etc/ssh/sshd_config
-sed -i 's/jessie/sid/g' /etc/apt/sources.list
+apt-get install -y openssh-server openssh-client
+rm /etc/ssh/sshd_config
+sed -i 's/wheezy/sid/g' /etc/apt/sources.list
 apt-get update
 apt-get dist-upgrade -y
 apt-get install -y git mosh curl
