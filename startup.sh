@@ -1,8 +1,16 @@
 #! /bin/bash
 rm /etc/ssh/sshd_config
+sed -i 's/jessie/sid/g' /etc/apt/sources.list
 apt-get update
-apt-get upgrade -y
-apt-get install -y git
+apt-get dist-upgrade -y
+apt-get install -y git mosh curl
+curl -sSL https://get.docker.com/ | sh
+curl -sL https://deb.nodesource.com/setup_0.12 | bash -
+echo "deb http://cran.rstudio.com/bin/linux/debian sid-cran3/" | tee -a /etc/apt/sources.list
+echo "deb http://deb.torproject.org/torproject.org sid main" | tee -a /etc/apt/sources.list
+apt-get install -y build-essential git graphicsmagick imagemagick nodejs gccgo mosh fish rustc haskell-platform sudo python3 python-pip php5 mysql-server sqlite apache2 clang maven
+apt-get dist-upgrade -y
+pip install docker-compose
 gcloud components update -q
 
 mkdir /root/.ssh
